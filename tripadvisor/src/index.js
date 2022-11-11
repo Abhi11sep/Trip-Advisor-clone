@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import HotelContextProvider from './Context/HotelContextProvider';
+import CartContextProvider from './CartCon/CartContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <HotelContextProvider>
+  <CartContextProvider>
+  <BrowserRouter>
+  <App />
+  </BrowserRouter>
+  </CartContextProvider>
+  </HotelContextProvider>
   </React.StrictMode>
 );
 
