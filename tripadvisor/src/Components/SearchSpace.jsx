@@ -194,11 +194,11 @@ const SearchSpace = () => {
           fontSize: '20px', padding: '5px 15px', marginRight: "10px", borderRadius: '10px',
           color: 'purple'
         }}>Attractions</button>
-        <button onClick={goOn} disabled={dataq.length==0} style={{
+        <button onClick={goOn} disabled={dataq.length===0} style={{
           border: 'none', backgroundColor: 'white',
           fontSize: '20px', padding: '5px 15px', marginRight: "0px", borderRadius: '10px',
           color: 'white', backgroundColor: '#e07624', marginLeft: '100px'
-        }}>Click to Search</button>
+        }}>{dataq.length===0? "choose options":"Click to Search"} </button>
       </div>
 
       <img style={{ width: "100%" }} src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' />

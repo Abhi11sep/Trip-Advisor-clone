@@ -4,6 +4,8 @@ import React, { useContext } from 'react'
 import { CartContext } from '../CartCon/CartContextProvider'
 import { removefrombasket } from '../CartCon/action';
 import { Button } from '@chakra-ui/react';
+import Rating from '@material-ui/lab/Rating';
+import Footer from './Footer'
 
 const Cart = () => {
 
@@ -11,7 +13,7 @@ const Cart = () => {
 
   console.log("cart", state)
   return (
-    <div style={{ backgroundColor: '#e1e3e6',paddingBottom:'250px' }}>
+    <div style={{ backgroundColor: '#e1e3e6',paddingBottom:'0px' }}>
       <h1 style={{
         backgroundColor: "white", color: '#051D40',
         paddingBottom: "25px"
@@ -32,7 +34,7 @@ const Cart = () => {
             <img style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',border:'none',borderTopLeftRadius:'25px',borderTopRightRadius:'25px'}} src={item.photo ? item.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'} width='100%' height='250px' />
             <h2>{item.name}</h2>
 
-            <p><b>Rating : </b>{item.rating ? item.rating :"4.3"}  out of 5</p>
+            <p> <b> Rating : </b>{item.rating ? item.rating : "4.1"}  out of 5  &nbsp; <Rating style={{}} name="read-only" value={item.rating ? item.rating : 4} readOnly /></p>
             <span><b>Price Range : </b>{item.price_level? item.price_level : "$-$$" } &nbsp;  |</span>
             <span> &nbsp;  <b>Reviews : </b>{item.num_reviews ? item.num_reviews: "8"}</span>
             <p style={{padding:'0px 10px'}}><b> Ranking : </b>{item.ranking ? item.ranking : "#904 of 12,413 Restaurants in city"}</p>
@@ -55,7 +57,7 @@ const Cart = () => {
         </div>
       ))}
     </div>
-
+ <Footer/>
     </div>
   )
 }
