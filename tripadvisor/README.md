@@ -72,4 +72,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 netlify deploy link : https://voyageguide.netlify.app/
 
-vercel deploy link : https://voyageguide.vercel.app/
