@@ -63,20 +63,54 @@ const Navbar = () => {
   }
 
   return (
-    <div style={{ display: 'flex', backgroundColor: '#051D40' }}>
+    <div style={{position:'fixed',top:'0px',width:'100%',zIndex:'50', display: 'flex', backgroundColor: '#051D40' }}>
       <Link to='/'><img style={{ marginLeft: "150px" }} src={img1} alt='picasa' width='100px' /></Link>
-      <p style={{ color: "white", textDecoration: "none", marginLeft: '520px' }}>
-        <CreateIcon />&nbsp;Review</p>
-      <p style={{ color: "white", textDecoration: "none", marginLeft: '35px' }}>
-        <FavoriteBorderIcon ></FavoriteBorderIcon>&nbsp;Trip</p>
-      <p style={{ color: "white", textDecoration: "none", marginLeft: '35px' }}>
-        <NotificationsNoneIcon />&nbsp;Alerts</p>
+
+       <p
+        style={{
+          color: "white",
+          marginLeft: "520px",
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
+        }}
+      >
+        <CreateIcon />
+        Review
+      </p>
+
+      <p
+        style={{
+          color: "white",
+          marginLeft: "35px",
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
+        }}
+      >
+        <FavoriteBorderIcon />
+        Trip
+      </p>
+
+      <p
+        style={{
+          color: "white",
+          marginLeft: "35px",
+          display: "flex",
+          alignItems: "center",
+          gap: "5px",
+        }}
+      >
+        <NotificationsNoneIcon />
+        Alerts
+      </p>
+
 
       <div>
         <Button onClick={onOpen} style={{
           color: "white", textDecoration: "none", backgroundColor: 'white', color: "#051D40",
           fontSize: "18px", borderRadius: "25px", marginTop: "15px", marginLeft: '35px', marginRight: '35px', paddingLeft: "25px",
-          paddingRight: "25px", paddingTop: '5px', paddingBottom: '5px'
+          paddingRight: "25px", paddingTop: '5px', paddingBottom: '5px',
         }}>{isLoad1 && isLoad2 && isLoad3 ? "User SignIn" : "Welcome User"}</Button>
 
         <Modal
@@ -190,12 +224,12 @@ const Navbar = () => {
 
 
 
-      <Link to='/cart'>
-        <p style={{
-          color: "white", textDecoration: "none",
-          marginTop: '25px'
-        }}><ShoppingCartIcon />&nbsp; Basket
-        </p></Link>
+      <Link to="/cart" style={{ textDecoration: "none", color: "white" }}>
+        <p style={{ marginTop: "25px" }}>
+          <ShoppingCartIcon style={{ verticalAlign: "middle" }} />
+          <span style={{ verticalAlign: "middle" }}> Basket</span>
+        </p>
+      </Link>
     </div>
   )
 }

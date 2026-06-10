@@ -11,7 +11,7 @@ import TopMissed from './TopMissed'
 
 const Home = () => {
   return (
-    <div>
+    <div style={{paddingTop:'65px'}}>
     <Options/>
       <SearchSpace/>
       <Experience/>

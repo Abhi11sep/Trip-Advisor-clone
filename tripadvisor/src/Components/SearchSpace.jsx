@@ -6,6 +6,7 @@ import axios from 'axios'
 import { addtohotels } from '../Context/action';
 import { useNavigate } from 'react-router-dom'
 import { HotelContext } from '../Context/HotelContextProvider';
+import { alignProperty } from '@mui/material/styles/cssUtils';
 
 
 
@@ -110,7 +111,7 @@ const SearchSpace = () => {
     let long = location.longitude;
     let leti = location.latitude
     getCity1(leti, long)
-      //  .then((res) => console.log("into",res))
+      //  .then((res) => console.log("restaurent",res))
       .then((res) => setDataq(res))
       .catch((err) => console.log(err));
   }
@@ -120,7 +121,7 @@ const SearchSpace = () => {
     let long = location.longitude;
     let leti = location.latitude
     getCity2(leti, long)
-      //  .then((res) => console.log("into",res))
+      //  .then((res) => console.log("hotel",res))
       .then((res) => setDataq(res))
       .catch((err) => console.log(err));
   }
@@ -130,7 +131,7 @@ const SearchSpace = () => {
     let long = location.longitude;
     let leti = location.latitude
     getCity3(leti, long)
-      //  .then((res) => console.log("into",res))
+      //  .then((res) => console.log("attractions",res))
       .then((res) => setDataq(res))
       .catch((err) => console.log(err));
   }
@@ -161,7 +162,7 @@ const SearchSpace = () => {
             <Input style={{
               padding: '10px 200px', fontSize: '20px',
               boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-              borderRadius: "25px", border: 'none'
+              borderRadius: "25px", border: 'none',textAlign:'left'
             }} type='text' placeholder='Where to?'
               onChange={handleChange}
             />
@@ -198,7 +199,7 @@ const SearchSpace = () => {
           border: 'none', backgroundColor: 'white',
           fontSize: '20px', padding: '5px 15px', marginRight: "0px", borderRadius: '10px',
           color: 'white', backgroundColor: '#e07624', marginLeft: '100px'
-        }}>{dataq.length===0? "choose options":"Click to Search"} </button>
+        }}>{dataq.length===0? "choose option":"Click to Search"} </button>
       </div>
 
       <img style={{ width: "100%" }} src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' />

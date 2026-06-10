@@ -1,20 +1,32 @@
 import { Button } from '@chakra-ui/react'
+import { Cursor } from 'mongoose'
 import React from 'react'
 
 const GetoutThere = () => {
     return (
         <div style={{
             backgroundColor: '#FAF1ED', display: 'flex', width: "80%",
-            margin: 'auto', justifyContent: 'space-between' ,marginTop:'80px'
+            margin: 'auto', justifyContent: 'space-between', marginTop: '80px'
         }}>
             <div style={{ padding: '5px 55px', textAlign: 'left', marginTop: '25px' }}>
                 <h2 >Get Out There</h2>
                 <p style={{ fontSize: '18px', color: 'grey', marginTop: '-25px' }}>Best of Best tours,attractions & activities you won't want to miss</p>
-                <Button style={{
-                    backgroundColor: 'black', color: 'white',
-                    fontSize: '16px', padding: '15px 25px',
-                    borderRadius: '25px', marginTop: '15px'
-                }}>See the list</Button>
+                <Button
+                    sx={{
+                        backgroundColor: "black",
+                        color: "white",
+                        fontSize: "16px",
+                        padding: "15px 25px",
+                        borderRadius: "25px",
+                        marginTop: "15px",
+                        "&:hover": {
+                            backgroundColor: "white",
+                            color: "black",
+                        },
+                    }}
+                >
+                    See the list
+                </Button>
 
             </div>
             <div>

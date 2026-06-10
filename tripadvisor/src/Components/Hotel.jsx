@@ -7,6 +7,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Rating from '@material-ui/lab/Rating';
 import Footer from './Footer'
+import VoyageGuide from "../LOGO/VoyageGuide.png";
 
 import useStyles from './Style';
 
@@ -21,7 +22,7 @@ const Hotel = () => {
     <div style={{ backgroundColor: '#e1e3e6', paddingBottom: '0px' }}>
       <h1 style={{
         backgroundColor: "white", color: '#051D40',
-        paddingBottom: "25px"
+        paddingBottom: "25px", paddingTop: '65px'
       }}>Explore the city</h1>
 
       <div style={{
@@ -38,7 +39,19 @@ const Hotel = () => {
               padding: '0px', borderRadius: '25px', lineHeight: '20px',
               backgroundColor: 'white'
             }}>
-              <img style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', border: 'none', borderTopLeftRadius: '25px', borderTopRightRadius: '25px' }} src={item.photo ? item.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'} width='100%' height='250px' />
+             
+              <img
+                style={{
+                  boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                  border: "none",
+                  borderTopLeftRadius: "25px",
+                  borderTopRightRadius: "25px",
+                }}
+                src={item.photo?.images?.large?.url || VoyageGuide}
+                width="100%"
+                height="250px"
+                alt={item.name}
+              />
               <h2>{item.name}</h2>
 
               <p> <b> Rating : </b>{item.rating ? item.rating : "4.1"}  out of 5  &nbsp; <Rating style={{}} name="read-only" value={item.rating ? item.rating : 4} readOnly /></p>
@@ -65,7 +78,7 @@ const Hotel = () => {
           </div>
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </div>
 
   )
