@@ -106,7 +106,7 @@ const SearchSpace = () => {
   }
   // let x = city;
 
-  const handleSubmit1 = () => {~
+  const handleSubmit1 = () => {
     console.log("tr1", location)
     let long = location.longitude;
     let leti = location.latitude
