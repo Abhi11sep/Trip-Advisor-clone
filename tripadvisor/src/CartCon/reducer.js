@@ -4,7 +4,7 @@ const reducer=(state,action)=>{
             return [...state,action.payload]
         }  
         case "REMOVE_FROM_BASKET":{
-            const cartafterremoval=state.filter((item)=>item.location_id!=action.payload);
+            const cartafterremoval=state.filter((item)=>item.location_id!==action.payload);
             return cartafterremoval
         }      
     default:{

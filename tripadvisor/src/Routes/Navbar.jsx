@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import img1 from '../LOGO/VoyageGuide.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CreateIcon from '@mui/icons-material/Create';
@@ -9,7 +8,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import {
   FormControl, ModalCloseButton, ModalHeader,
   ModalBody, Button, useDisclosure, Modal, ModalOverlay, ModalFooter,
-  ModalContent, FormLabel, Input, Center
+  ModalContent
 } from '@chakra-ui/react';
 import imgA from '../LOGO/google.png'
 import imgB from '../LOGO/facebbok.png'
@@ -108,7 +107,7 @@ const Navbar = () => {
 
       <div>
         <Button onClick={onOpen} style={{
-          color: "white", textDecoration: "none", backgroundColor: 'white', color: "#051D40",
+           textDecoration: "none", backgroundColor: 'white', color: "#051D40",
           fontSize: "18px", borderRadius: "25px", marginTop: "15px", marginLeft: '35px', marginRight: '35px', paddingLeft: "25px",
           paddingRight: "25px", paddingTop: '5px', paddingBottom: '5px',
         }}>{isLoad1 && isLoad2 && isLoad3 ? "User SignIn" : "Welcome User"}</Button>

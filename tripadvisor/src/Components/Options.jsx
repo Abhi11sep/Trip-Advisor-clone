@@ -5,9 +5,8 @@ import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import LanguageIcon from '@mui/icons-material/Language';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { ChevronDownIcon } from '@chakra-ui/icons'
 import '../Components/Option.css';
-import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, Button } from '@chakra-ui/react';
+import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 
 const Options = () => {
     return (

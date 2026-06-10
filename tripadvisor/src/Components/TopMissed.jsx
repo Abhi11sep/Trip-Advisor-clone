@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Carousel from 'react-elastic-carousel';
 
 const breakPoints = [
@@ -9,7 +9,7 @@ const breakPoints = [
 ];
 
 const TopMissed = () => {
-    const [items, setItems] = useState([{
+    const items =[{
         pic: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/66/68/f6/caption.jpg?w=300&h=300&s=1&cx=988&cy=664&chk=v1_d1b5b3f4c384c764b7e1',
         title: 'Tulum-Mexico',
 
@@ -34,7 +34,7 @@ const TopMissed = () => {
     }, {
         pic: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/4b/5e/c2/caption.jpg?w=300&h=300&s=1',
         title: 'Bali, Indonesia'
-    }]);
+    }];
 
 
     return (
@@ -52,7 +52,7 @@ const TopMissed = () => {
                 <Carousel breakPoints={breakPoints} >
                     {items.map((item) => (
                         <div >
-                            <img src={item.pic} width='280px' />
+                            <img src={item.pic} width='280px' alt="img" />
                             <p style={{
                                 padding: "2px 15px", textAlign: 'left', fontWeight: '700',
                                 fontSize: '30px', marginTop: '-50px', lineHeight: '20px',

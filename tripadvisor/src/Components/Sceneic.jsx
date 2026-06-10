@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Carousel from 'react-elastic-carousel';
 
 const breakPoints = [
@@ -9,7 +9,7 @@ const breakPoints = [
 ];
 
 const Sceneic=()=>{
-  const [items, setItems] = useState([{
+  const items =[{
     pic:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/68/2b/0f/merkmal-des-dal-sees.jpg?w=300&h=300&s=1',
     title:'Dal Lake',
 
@@ -34,7 +34,7 @@ const Sceneic=()=>{
   }, {
     pic:'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/2c/e7/df/baspa-river.jpg?w=300&h=300&s=1',
     title:'kinnaur'
-  }]);
+  }];
 
 
   return (
@@ -47,7 +47,7 @@ const Sceneic=()=>{
         <Carousel breakPoints={breakPoints} >
           {items.map((item) => (
            <div >
-            <img src={item.pic} width='280px'/>
+            <img src={item.pic} width='280px' alt="img"/>
             <p style={{padding:"2px 15px",textAlign:'left',fontWeight:'600',
             fontSize:'18px',marginTop:'0px',lineHeight:'20px'}}>{item.title}</p>
            </div>

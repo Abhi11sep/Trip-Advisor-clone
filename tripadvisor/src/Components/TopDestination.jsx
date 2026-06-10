@@ -12,7 +12,7 @@ const TopDestination = () => {
         <button style={{color:'white',backgroundColor:'black',padding:'10px 25px',
         fontSize:'20px',borderRadius:'25px'}}>See the winners</button>
     </div>
-        <img src='https://static.tacdn.com/img2/brand/feed/tc_cards_tablet2x.jpeg'
+        <img src='https://static.tacdn.com/img2/brand/feed/tc_cards_tablet2x.jpeg' alt="img"
             width="900px" height='600px' style={{objectFit: 'cover',
                     objectPosition: '95% 95%'}}
         />

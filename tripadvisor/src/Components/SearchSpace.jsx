@@ -1,19 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Stack, Input, InputGroup, InputLeftElement, Button } from '@chakra-ui/react'
-import SearchIcon from '@mui/icons-material/Search';
-import { useEffect } from 'react';
+import { Stack, Input, InputGroup } from '@chakra-ui/react'
 import axios from 'axios'
 import { addtohotels } from '../Context/action';
 import { useNavigate } from 'react-router-dom'
 import { HotelContext } from '../Context/HotelContextProvider';
-import { alignProperty } from '@mui/material/styles/cssUtils';
-
-
 
 const SearchSpace = () => {
   const { state, dispatch } = useContext(HotelContext)
   const [dataq, setDataq] = useState([]);
-  const [final, setFinal] = useState("");
   const [city, setCity] = useState("");
   const navigate = useNavigate();
   const [location, setLocation] = useState("");
@@ -199,13 +193,13 @@ const SearchSpace = () => {
           color: 'purple'
         }}>Attractions</button>
         <button onClick={goOn} disabled={dataq.length === 0} style={{
-          border: 'none', backgroundColor: 'white',
+          border: 'none',
           fontSize: '20px', padding: '5px 15px', marginRight: "0px", borderRadius: '10px',
           color: 'white', backgroundColor: '#e07624', marginLeft: '100px'
         }}>{dataq.length === 0 ? "choose option" : "Click to Search"} </button>
       </div>
 
-      <img style={{ width: "100%" }} src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' />
+      <img style={{ width: "100%" }} src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' alt="img" />
     </div>
   )
 }

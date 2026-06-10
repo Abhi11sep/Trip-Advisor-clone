@@ -2,14 +2,13 @@ import React, { useContext } from 'react'
 import { CartContext } from '../CartCon/CartContextProvider';
 import { HotelContext } from '../Context/HotelContextProvider'
 import { addtobasket } from '../CartCon/action';
-import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from '@material-ui/core';
+import {  Button } from '@material-ui/core';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Rating from '@material-ui/lab/Rating';
 import Footer from './Footer'
 import VoyageGuide from "../LOGO/VoyageGuide.png";
 
-import useStyles from './Style';
 
 const Hotel = () => {
 

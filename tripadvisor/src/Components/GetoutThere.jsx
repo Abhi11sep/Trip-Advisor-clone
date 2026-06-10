@@ -1,5 +1,4 @@
 import { Button } from '@chakra-ui/react'
-import { Cursor } from 'mongoose'
 import React from 'react'
 
 const GetoutThere = () => {
@@ -30,7 +29,7 @@ const GetoutThere = () => {
 
             </div>
             <div>
-                <img src='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f7/1d/4d/caption.jpg?w=1000&h=-1&s=1' height="200px" width="500px" style={{
+                <img src='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/f7/1d/4d/caption.jpg?w=1000&h=-1&s=1' height="200px" width="500px" alt="image_list" style={{
                     objectFit: 'cover',
                     objectPosition: '5% 45%'
                 }} />

@@ -135,7 +135,7 @@ const Footer = () => {
           </ul>
           {token === "" ? <div>
             <Button onClick={onOpen} style={{
-              color: "white", textDecoration: "none", backgroundColor: 'white', color: "#051D40",
+               textDecoration: "none", backgroundColor: 'white', color: "#051D40",
               fontSize: "18px", borderRadius: "25px", marginTop: '15px', marginLeft: '80px', marginRight: '20px', paddingLeft: "25px",
               paddingRight: "25px", paddingTop: '5px', paddingBottom: '0px'
             }}>{token === "" ? "Admin SignIn" : "Welcome Admin"}</Button>
@@ -206,7 +206,7 @@ const Footer = () => {
             </Modal>
           </div> : <div>
             <Button onClick={onOpen} style={{
-              color: "white", textDecoration: "none", backgroundColor: 'white', color: "#051D40",
+               textDecoration: "none", backgroundColor: 'white', color: "#051D40",
               fontSize: "18px", borderRadius: "25px", marginTop: '15px', marginLeft: '80px', marginRight: '20px', paddingLeft: "25px",
               paddingRight: "25px", paddingTop: '5px', paddingBottom: '5px'
             }}>{token === "" ? "Admin SignIn" : "Welcome Admin"}</Button>
@@ -304,10 +304,10 @@ const Footer = () => {
         </div>
 
         <div style={{ backgroundColor: "white", marginBottom: "15px", marginLeft: "100px", width: "55%" }}>
-          <img width="45px" src="https://tse1.mm.bing.net/th?id=OIP.QTyihsvnfYbJL9dQLrhTsgHaHa&pid=Api&rs=1&c=1&qlt=95&w=121&h=121" />
-          <img width="40px" src="https://tse1.mm.bing.net/th?id=OIP.maD3GoTpodAtk505594YOgHaHu&pid=Api&rs=1&c=1&qlt=95&w=112&h=117" />
-          <img width="55px" src="https://tse2.mm.bing.net/th?id=OIP.fb0LUcIKaVkBqExMCDUA9gHaFj&pid=Api&P=0" />
-          <img width="40px" src="https://tse2.mm.bing.net/th?id=OIP.7EnJXdlI46eYKUYKt9K8ogHaHa&pid=Api&P=0" />
+          <img width="45px" src="https://tse1.mm.bing.net/th?id=OIP.QTyihsvnfYbJL9dQLrhTsgHaHa&pid=Api&rs=1&c=1&qlt=95&w=121&h=121" alt="image_list"/>
+          <img width="40px" src="https://tse1.mm.bing.net/th?id=OIP.maD3GoTpodAtk505594YOgHaHu&pid=Api&rs=1&c=1&qlt=95&w=112&h=117" alt="image_list"/>
+          <img width="55px" src="https://tse2.mm.bing.net/th?id=OIP.fb0LUcIKaVkBqExMCDUA9gHaFj&pid=Api&P=0" alt="image_list"/>
+          <img width="40px" src="https://tse2.mm.bing.net/th?id=OIP.7EnJXdlI46eYKUYKt9K8ogHaHa&pid=Api&P=0" alt="image_list"/>
         </div>
       </div>
     </div>

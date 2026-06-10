@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Carousel from 'react-elastic-carousel';
 
 const breakPoints = [
@@ -70,7 +69,7 @@ const Experience = () => {
         <Carousel breakPoints={breakPoints} >
           {items.map((item) => (
             <div >
-              <img src={item.pic} width='280px' height='280px' />
+              <img src={item.pic} width='280px' height='280px' alt="item_image" />
               <p style={{
                 padding: "2px 15px", textAlign: 'left', fontWeight: '600',
                 fontSize: '18px', marginTop: '0px', lineHeight: '20px'
