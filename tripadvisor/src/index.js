@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import HotelContextProvider from './Context/HotelContextProvider';
-import CartContextProvider from './CartCon/CartContextProvider';
+import HotelContextProvider from './Context/HotelContextProvider.jsx';
+import CartContextProvider from './CartCon/CartContextProvider.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

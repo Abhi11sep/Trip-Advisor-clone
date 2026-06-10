@@ -1,13 +1,13 @@
 import React from 'react'
-import Experience from './Experience'
-import Footer from './Footer'
-import GetoutThere from './GetoutThere'
-import MoreExplore from './MoreExplore'
-import Options from './Options'
-import Sceneic from './Sceneic'
-import SearchSpace from './SearchSpace'
-import TopDestination from './TopDestination'
-import TopMissed from './TopMissed'
+import Experience from './Experience.jsx'
+import Footer from './Footer.jsx'
+import GetoutThere from './GetoutThere.jsx'
+import MoreExplore from './MoreExplore.jsx'
+import Options from './Options.jsx'
+import Sceneic from './Sceneic.jsx'
+import SearchSpace from './SearchSpace.jsx'
+import TopDestination from './TopDestination.jsx'
+import TopMissed from './TopMissed.jsx'
 
 const Home = () => {
   return (

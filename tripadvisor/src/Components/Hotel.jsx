@@ -6,7 +6,7 @@ import {  Button } from '@material-ui/core';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Rating from '@material-ui/lab/Rating';
-import Footer from './Footer'
+import Footer from './Footer.jsx'
 import VoyageGuide from "../LOGO/VoyageGuide.png";
 
 

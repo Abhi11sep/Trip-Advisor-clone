@@ -1,7 +1,7 @@
 
 import './App.css';
-import AllRoutes from './Routes/AllRoutes';
-import Navbar from './Routes/Navbar';
+import AllRoutes from './Routes/AllRoutes.jsx';
+import Navbar from './Routes/Navbar.jsx';
 
 function App() {
   return (
