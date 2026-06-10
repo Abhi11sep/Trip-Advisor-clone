@@ -24,7 +24,7 @@ const SearchSpace = () => {
       method: 'GET',
       url: `https://api.api-ninjas.com/v1/city?name=${city}`,
       headers: {
-        "X-Api-Key": "iqOkxHKMmOirQ7Rfn9i4Fg==ig1gKRAx2XXOMoee"
+        "X-Api-Key": process.env.REACT_APP_API_KEY
       }
     });
   };
@@ -37,8 +37,8 @@ const SearchSpace = () => {
           latitude: lati
         },
         headers: {
-          'x-rapidapi-key': '64378948c5mshf9c719ac5998fdcp1d3825jsn93e8d97e9161',
-          'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
+          'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
+          'x-rapidapi-host': process.env.REACT_APP_RAPID_API_HOST,
         },
       });
 
@@ -57,8 +57,8 @@ const SearchSpace = () => {
           latitude: lati
         },
         headers: {
-          'x-rapidapi-key': '64378948c5mshf9c719ac5998fdcp1d3825jsn93e8d97e9161',
-          'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
+          'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
+          'x-rapidapi-host': process.env.REACT_APP_RAPID_API_HOST,
         },
       });
 
@@ -77,8 +77,8 @@ const SearchSpace = () => {
           latitude: lati
         },
         headers: {
-          'x-rapidapi-key': '64378948c5mshf9c719ac5998fdcp1d3825jsn93e8d97e9161',
-          'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
+          'x-rapidapi-key': process.env.REACT_APP_RAPID_API_KEY,
+          'x-rapidapi-host': process.env.REACT_APP_RAPID_API_HOST,
         },
       });
 
@@ -98,6 +98,9 @@ const SearchSpace = () => {
   const handleChange = (e) => {
     setCity(e.target.value)
     console.log(city)
+    console.log("API", process.env.REACT_APP_API_KEY);
+    console.log("RAPID", process.env.REACT_APP_RAPID_API_KEY);
+    console.log("HOST", process.env.REACT_APP_RAPID_API_HOST);
     getCityCoordinates(city)
       .then((res) => setLocation(res.data[0]))
       .then((res) => console.log(res))
@@ -162,7 +165,7 @@ const SearchSpace = () => {
             <Input style={{
               padding: '10px 200px', fontSize: '20px',
               boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-              borderRadius: "25px", border: 'none',textAlign:'left'
+              borderRadius: "25px", border: 'none', textAlign: 'left'
             }} type='text' placeholder='Where to?'
               onChange={handleChange}
             />
@@ -195,11 +198,11 @@ const SearchSpace = () => {
           fontSize: '20px', padding: '5px 15px', marginRight: "10px", borderRadius: '10px',
           color: 'purple'
         }}>Attractions</button>
-        <button onClick={goOn} disabled={dataq.length===0} style={{
+        <button onClick={goOn} disabled={dataq.length === 0} style={{
           border: 'none', backgroundColor: 'white',
           fontSize: '20px', padding: '5px 15px', marginRight: "0px", borderRadius: '10px',
           color: 'white', backgroundColor: '#e07624', marginLeft: '100px'
-        }}>{dataq.length===0? "choose option":"Click to Search"} </button>
+        }}>{dataq.length === 0 ? "choose option" : "Click to Search"} </button>
       </div>
 
       <img style={{ width: "100%" }} src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' />
