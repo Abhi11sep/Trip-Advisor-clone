@@ -23,45 +23,139 @@ const Cart = () => {
 
       <div id='cart_cards'>
         {state.map((item) => (
-          <div>
-            <div style={{
-              boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
-              padding: '0px', borderRadius: '25px', lineHeight: '20px',
-              backgroundColor: 'white'
-            }}>
+          <div
+            key={item.location_id}
+            style={{
+              background: "#fff",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+              transition: "0.3s",
+              cursor: "pointer",
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.boxShadow =
+                "0 20px 35px rgba(0,0,0,0.18)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 10px 25px rgba(0,0,0,0.12)";
+            }}
+          >
+            {/* Image */}
+            <div style={{ position: "relative" }}>
               <img
-                style={{
-                  boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                  border: "none",
-                  borderTopLeftRadius: "25px",
-                  borderTopRightRadius: "25px",
-                }}
                 src={item.photo?.images?.large?.url || VoyageGuide}
-                width="100%"
-                height="250px"
                 alt={item.name}
+                style={{
+                  width: "100%",
+                  height: "240px",
+                  objectFit: "cover",
+                }}
               />
-              <h2>{item.name}</h2>
 
-              <p> <b> Rating : </b>{item.rating ? item.rating : "4.1"}  out of 5  &nbsp; <Rating style={{}} name="read-only" value={item.rating ? item.rating : 4} readOnly /></p>
-              <span><b>Price Range : </b>{item.price_level ? item.price_level : "$-$$"} &nbsp;  |</span>
-              <span> &nbsp;  <b>Reviews : </b>{item.num_reviews ? item.num_reviews : "8"}</span>
-              <p style={{ padding: '0px 10px' }}><b> Ranking : </b>{item.ranking ? item.ranking : "#904 of 12,413 Restaurants in city"}</p>
-              <p style={{ padding: '0px 10px' }}><LocationOnIcon />{item.address ? item.address : "Ground Floor 1936 H C Sen Road, Near Yes Bank,India"}</p>
-              <p><PhoneIcon />{item.phone ? item.phone : "+91 11 2392 0931"}</p>
-              <Button style={{
-                backgroundColor: '#051D40', color: 'white',
-                fontSize: '18px', padding: '5px 25px', borderRadius: '25px', marginBottom: '25px'
-              }} variant='solid'>
-                <a href='https://www.trivago.com/' style={{ textDecoration: "none", color: 'white' }}>View Deal</a>
-              </Button>
-              <Button style={{
-                backgroundColor: '#051D40', color: 'white',
-                fontSize: '18px', padding: '5px 20px', marginLeft: '15px', borderRadius: '25px', marginBottom: '25px'
-              }} variant='solid'
-                onClick={() => dispatch(removefrombasket(item.location_id))}>
-                Remove from Basket
-              </Button>
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,.7), transparent)",
+                }}
+              />
+
+              <h2
+                style={{
+                  position: "absolute",
+                  bottom: "15px",
+                  left: "18px",
+                  color: "#fff",
+                  margin: 0,
+                  fontSize: "24px",
+                  fontWeight: "700",
+                }}
+              >
+                {item.name}
+              </h2>
+            </div>
+
+            {/* Content */}
+            <div style={{
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              flex: 1,
+            }}>
+
+              {/* Rating */}
+              <div className='cart_in_cards'>
+                <span><strong>⭐ Rating</strong></span>
+
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <Rating
+                    value={Number(item.rating) || 4}
+                    precision={0.5}
+                    readOnly
+                    size="small"
+                  />
+                  <span>{item.rating || "4.1"}</span>
+                </div>
+              </div>
+
+              {/* Reviews */}
+              <div className='cart_in_cards'>
+                <span><strong>📝 Reviews</strong></span>
+                <span>{item.num_reviews || "8"}</span>
+              </div>
+
+              {/* Ranking */}
+              <div className='cart_in_cards'>
+                <span><strong>🏆 Ranking</strong></span>
+                <span>{item.ranking || "#904 in City"}</span>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  marginTop: "18px",
+                  color: "#666",
+                  fontSize: "14px",
+                }}
+              >
+                <LocationOnIcon color="primary" />
+                <span>
+                  {item.address || "Ground Floor 1936 H C Sen Road"}
+                </span>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  marginTop: "12px",
+                  color: "#666",
+                  fontSize: "14px",
+                }}
+              >
+                <PhoneIcon color="success" />
+                <span>{item.phone || "+91 11 2392 0931"}</span>
+              </div>
+
+              {/* Buttons */}
+              <div className="buttonContainer">
+                <Button className="viewBtn_cart">
+                  <a href='https://www.trivago.com/' style={{ textDecoration: "none", color: 'white' }}>🔍 View Deal </a>
+                </Button>
+                <Button className="saveBtn_cart" onClick={() => dispatch(removefrombasket(item.location_id))}>
+                  Remove from Basket
+                </Button>
+
+              </div>
+
             </div>
           </div>
         ))}

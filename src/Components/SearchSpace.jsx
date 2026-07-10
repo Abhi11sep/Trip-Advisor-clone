@@ -197,7 +197,7 @@ const SearchSpace = () => {
               <Input
                 w="100%"
                 type="text"
-                placeholder="Where to?"
+                placeholder=" Enter City Name to Explore..."
                 onChange={handleChange}
                 style={{
                   padding: "12px 20px",

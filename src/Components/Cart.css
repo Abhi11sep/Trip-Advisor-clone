@@ -4,9 +4,58 @@
     grid-template-rows: auto;
     grid-template-columns: repeat(3, 1fr);
     padding: 0px;
-    width: 90%;
+    width: 85%;
     margin: 50px auto;
 }
+
+
+.cart_in_cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+    font-size: 15px;
+}
+
+.viewBtn_cart {
+    flex: 1;
+    background: #608dec !important;
+    color: white !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 10px 0px;
+}
+
+.viewBtn_cart:hover {
+    background: #0b5ed7 !important;
+    transform: translateY(-2px);
+}
+
+.saveBtn_cart {
+    flex: 1;
+    background: #e78383 !important;
+    color: white !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.saveBtn_cart:hover {
+    background: #e63946 !important;
+    transform: translateY(-2px);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
 
 
 @media (max-width:1000px) {
