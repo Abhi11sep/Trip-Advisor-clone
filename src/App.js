@@ -6,8 +6,8 @@ import Navbar from './Routes/Navbar.jsx';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <AllRoutes/>
+      <Navbar />
+      <AllRoutes />
     </div>
   );
 }

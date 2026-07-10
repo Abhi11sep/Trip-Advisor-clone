@@ -4,6 +4,7 @@ import axios from 'axios'
 import { addtohotels } from '../Context/action';
 import { useNavigate } from 'react-router-dom'
 import { HotelContext } from '../Context/HotelContextProvider';
+import './SearchSpace.css'
 
 const SearchSpace = () => {
   const { state, dispatch } = useContext(HotelContext)
@@ -11,7 +12,10 @@ const SearchSpace = () => {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
   const [location, setLocation] = useState("");
-
+  const [selected, setSelected] = useState(false);
+  const [count, setCount] = useState(3);
+  const [loading, setLoading] = useState(false)
+  const [category, setCategory] = useState("")
 
   const getCityCoordinates = (city) => {
     return axios({
@@ -89,6 +93,24 @@ const SearchSpace = () => {
     navigate('/hotel')
   }
 
+  const startCountdown = () => {
+    setSelected(true);
+    setCount(3);
+
+    let timer = 3;
+
+    const interval = setInterval(() => {
+      timer--;
+
+      if (timer > 0) {
+        setCount(timer);
+      } else {
+        clearInterval(interval);
+        setCount(0);
+      }
+    }, 1000);
+  };
+
   const handleChange = (e) => {
     setCity(e.target.value)
     console.log(city)
@@ -101,106 +123,143 @@ const SearchSpace = () => {
       .catch((err) => console.log(err));
 
   }
-  // let x = city;
 
   const handleSubmit1 = () => {
-    console.log("tr1", location)
+    setCategory("Restaurants");
+    setLoading(true);
+
     let long = location.longitude;
-    let leti = location.latitude
+    let leti = location.latitude;
+
     getCity1(leti, long)
-      //  .then((res) => console.log("restaurent",res))
-      .then((res) => setDataq(res))
-      .catch((err) => console.log(err));
-  }
+      .then((res) => {
+        setDataq(res);
+
+        setTimeout(() => {
+          setLoading(false);
+          startCountdown();
+        }, 200);
+      })
+      .catch(console.log);
+  };
+
 
   const handleSubmit2 = () => {
-    console.log("tr1", location)
+    setCategory("Hotels");
+    setLoading(true);
+
     let long = location.longitude;
-    let leti = location.latitude
-    getCity2(leti, long)
-      //  .then((res) => console.log("hotel",res))
-      .then((res) => setDataq(res))
-      .catch((err) => console.log(err));
-  }
+    let leti = location.latitude;
+
+    getCity1(leti, long)
+      .then((res) => {
+        setDataq(res);
+
+
+        setTimeout(() => {
+          setLoading(false);
+          startCountdown();
+        }, 200);
+      })
+      .catch(console.log);
+  };
+
 
   const handleSubmit3 = () => {
-    console.log("tr1", location)
+    setCategory("Attractions");
+    setLoading(true);
+
     let long = location.longitude;
-    let leti = location.latitude
-    getCity3(leti, long)
-      //  .then((res) => console.log("attractions",res))
-      .then((res) => setDataq(res))
-      .catch((err) => console.log(err));
-  }
+    let leti = location.latitude;
 
+    getCity1(leti, long)
+      .then((res) => {
+        setDataq(res);
 
+        setTimeout(() => {
+          setLoading(false);
+          startCountdown();
+        }, 200);
+      })
+      .catch(console.log);
+  };
 
-  // const getdata=(x)=>{
-
-  // }
   console.log("data", dataq);
   console.log("coo", location.longitude, location.latitude)
 
-
-
   return (
-    <div style={{ width: '80%', margin: "auto" }}>
-      <div style={{
-        position: 'absolute', marginLeft: "300px",
-        marginTop: '120px'
-        , width: "10%", borderRadius: "25px",
-        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+    <div id='main'>
+      <div className="hero-content">
+        <div id='search_div'>
 
-      }}>
+          <Stack w="100%">
+            <InputGroup>
+              <Input
+                w="100%"
+                type="text"
+                placeholder="Where to?"
+                onChange={handleChange}
+                style={{
+                  padding: "12px 20px",
+                  fontSize: "20px",
+                  borderRadius: "25px",
+                  border: "none",
+                  boxShadow: "rgba(0,0,0,.35) 0px 5px 15px",
+                  boxSizing: "border-box",
+                }}
+              />
+            </InputGroup>
+          </Stack>
+        </div>
+        <div className='overlay'>
+          {!category ? (
+            <>
+              <div id='div_category'>✨ Pick category
+              </div>
+              <button
+                onClick={handleSubmit1}
+                className={`option-btn ${selected === "restaurants" ? "active" : ""}`}
+              >
+                🍽 Restaurants
+              </button>
 
-        <Stack spacing={4}>
-          <InputGroup>
-            {/* <Button style={{border:'none',borderRadius:'45px'}}> */}
-            <Input style={{
-              padding: '10px 200px', fontSize: '20px',
-              boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-              borderRadius: "25px", border: 'none', textAlign: 'left'
-            }} type='text' placeholder='Where to?'
-              onChange={handleChange}
-            />
+              <button
+                onClick={handleSubmit2}
+                className={`option-btn ${selected === "hotels" ? "active" : ""}`}
+              >
+                🏨 Hotels
+              </button>
 
+              <button
+                onClick={handleSubmit3}
+                className={`option-btn ${selected === "attractions" ? "active" : ""}`}
+              >
+                📍 Attractions
+              </button>
+            </>
+          ) : (
+            loading ? (
+              <button className="search-btn">
+                🔄 Finding {category}...
+              </button>
+            ) : count > 0 ? (
+              <button className="search-btn">
+                Search in {count}...
+              </button>
+            ) : (
+              <button onClick={goOn} className="search-btn" >
+                Let's Explore the City
+              </button>
+            )
 
-            {/* </Button> */}
+          )}
 
-
-          </InputGroup>
-
-        </Stack>
+        </div>
       </div>
-      <div style={{
-        position: 'absolute', marginLeft: "90px",
-        marginTop: '180px'
-        , width: "70%"
-      }}>
-        <button onClick={handleSubmit1} style={{
-          border: 'none', backgroundColor: 'white',
-          fontSize: '20px', padding: '5px 15px', marginRight: "10px", borderRadius: '10px',
-          color: 'purple'
-        }} >Restaurents</button>
-        <button onClick={handleSubmit2} style={{
-          border: 'none', backgroundColor: 'white',
-          fontSize: '20px', padding: '5px 15px', marginRight: "10px", borderRadius: '10px',
-          color: 'purple'
-        }}>Hotels</button>
-        <button onClick={handleSubmit3} style={{
-          border: 'none', backgroundColor: 'white',
-          fontSize: '20px', padding: '5px 15px', marginRight: "10px", borderRadius: '10px',
-          color: 'purple'
-        }}>Attractions</button>
-        <button onClick={goOn} disabled={dataq.length === 0} style={{
-          border: 'none',
-          fontSize: '20px', padding: '5px 15px', marginRight: "0px", borderRadius: '10px',
-          color: 'white', backgroundColor: '#e07624', marginLeft: '100px'
-        }}>{dataq.length === 0 ? "choose option" : "Click to Search"} </button>
-      </div>
 
-      <img style={{ width: "100%" }} src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' alt="img" />
-    </div>
+
+      <img src='https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp' alt="img" />
+    </div >
   )
 }
 

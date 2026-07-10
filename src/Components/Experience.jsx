@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from 'react-elastic-carousel';
+import './Experience.css'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -10,7 +11,7 @@ const breakPoints = [
 
 const Experience = () => {
 
-  const items= [
+  const items = [
     {
       "pic": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5f/cb/ed/caption.jpg?w=300&h=300&s=1",
       "title": "Four-Day Private Luxury Golden Triangle Tour to Agra and Jaipur From New Delhi",
@@ -61,10 +62,7 @@ const Experience = () => {
   return (
     <div style={{ marginTop: '80px' }}>
 
-      <p style={{
-        textAlign: 'left', marginLeft: "150px", fontSize: '27px',
-        fontWeight: '600'
-      }}>Top experiences on Tripadvisor</p>
+      <p id='heading'>Top experiences on Tripadvisor</p>
       <div className="carousel-wrapper" style={{ width: '90%', margin: 'auto' }}>
         <Carousel breakPoints={breakPoints} >
           {items.map((item) => (

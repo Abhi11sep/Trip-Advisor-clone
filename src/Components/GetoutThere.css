@@ -1,0 +1,21 @@
+#container1 {
+    background-color: #FAF1ED;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+#photo_div img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 950px) {
+    #container1 {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

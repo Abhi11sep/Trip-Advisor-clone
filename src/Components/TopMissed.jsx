@@ -9,7 +9,7 @@ const breakPoints = [
 ];
 
 const TopMissed = () => {
-    const items =[{
+    const items = [{
         pic: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/66/68/f6/caption.jpg?w=300&h=300&s=1&cx=988&cy=664&chk=v1_d1b5b3f4c384c764b7e1',
         title: 'Tulum-Mexico',
 
@@ -41,11 +41,11 @@ const TopMissed = () => {
         <div style={{ marginTop: '80px' }}>
 
             <p style={{
-                textAlign: 'left', marginLeft: "150px", fontSize: '27px',
+                fontSize: '27px',
                 fontWeight: '600'
             }}>Top destinations for beach lovers</p>
             <p style={{
-                color: 'grey', textAlign: 'left', marginLeft: "150px",
+                color: 'grey',
                 marginTop: '-25px', marginBottom: '30px'
             }}>Recommended based on your activity</p>
             <div className="carousel-wrapper" style={{ width: '90%', margin: 'auto' }}>

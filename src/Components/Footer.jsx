@@ -6,6 +6,7 @@ import {
   ModalContent, FormLabel, Input, Center
 } from '@chakra-ui/react';
 import { useState, useRef } from 'react';
+import './Footer.css'
 
 const init = {
   pic: "",
@@ -23,13 +24,13 @@ const Footer = () => {
   })
 
   const handleChangeproduct = (e) => {
-    setProduct({ ...product, [e.target.name]:e.target.value})
+    setProduct({ ...product, [e.target.name]: e.target.value })
   }
 
   const handleChange = (e) => {
     setLoginDetails({ ...loginDetails, [e.target.name]: e.target.value })
   }
- console.log(product);
+  console.log(product);
 
   const handleSubmitproduct = () => {
     axios({
@@ -37,7 +38,7 @@ const Footer = () => {
       url: "http://localhost:8080/products",
       data: product
     })
-   
+
   }
 
   const handleLogin = () => {
@@ -62,50 +63,50 @@ const Footer = () => {
   console.log(token)
 
   return (<div style={{ marginTop: '80px' }}>
-    <div style={{ textAlign: 'left', display: 'flex', backgroundColor: "#FAF1ED", fontFamily: "sans-serif", paddingLeft: '150px' }}>
-      <div style={{ width: "60%", padding: "0px" }}>
+    <div id='div_main'>
+      <div className='div_left'>
         <div style={{ display: "flex" }}>
           <div>
             <ul style={{ listStyle: 'none' }}>
               <li style={{ fontSize: "16px", color: "#333333", lineHeight: "25px" }}>About Tripadvisor</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>About us</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Press</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Resources and Policies</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Careers</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Trust & safety</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Contact us</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Accessibility Statement</li>
+              <li className='list_item'>About us</li>
+              <li className='list_item'>Press</li>
+              <li className='list_item'>Resources and Policies</li>
+              <li className='list_item'>Careers</li>
+              <li className='list_item'>Trust & safety</li>
+              <li className='list_item'>Contact us</li>
+              <li className='list_item'>Accessibility Statement</li>
             </ul>
           </div>
           <div>
             <ul style={{ listStyle: 'none' }}>
               <li style={{ fontSize: "16px", color: "#333333", lineHeight: "25px" }}>Explore</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Write a review</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Add a Place</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Join</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Travellers' Choice</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>GreenLeaders</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Help Centre</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Travel Articles</li>
+              <li className='list_item'>Write a review</li>
+              <li className='list_item'>Add a Place</li>
+              <li className='list_item'>Join</li>
+              <li className='list_item'>Travellers' Choice</li>
+              <li className='list_item'>GreenLeaders</li>
+              <li className='list_item'>Help Centre</li>
+              <li className='list_item'>Travel Articles</li>
             </ul>
           </div>
-          <div>
+          <div id='div_left_last'>
             <ul style={{ listStyle: 'none' }}>
               <li style={{ fontSize: "16px", color: "#333333", lineHeight: "25px" }}>Do Business With Us</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Owners & DMO/CVB</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Business Advantage</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Sponsored Placements</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Access our Content API</li>
+              <li className='list_item'>Owners & DMO/CVB</li>
+              <li className='list_item'>Business Advantage</li>
+              <li className='list_item'>Sponsored Placements</li>
+              <li className='list_item'>Access our Content API</li>
 
               <li style={{ fontSize: "16px", color: "#333333", lineHeight: "25px" }}>Get The App</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>iPhone App</li>
-              <li style={{ fontWeight: "700", fontSize: "14px", color: "#545454", lineHeight: "17px" }}>Android App</li>
+              <li className='list_item'>iPhone App</li>
+              <li className='list_item'>Android App</li>
             </ul>
           </div>
 
         </div>
 
-        <div>
+        <div id='div_bottom'>
           <div style={{ width: '100%' }}>
             <p style={{ marginLeft: "40px", marginBottom: "-15px", fontSize: "12px" }}>© 2022 Tripadvisor LLC All rights reserved.</p>
             <div>
@@ -128,14 +129,14 @@ const Footer = () => {
 
       </div>
       <div>
-        <div style={{}}>
+        <div className='div_right'>
           <ul style={{ listStyle: 'none' }} >
             <li style={{ fontSize: "16px", color: "#333333", lineHeight: "25px" }}>Tripadvisor Sites</li>
             <li>Book tours and attraction tickets on <b>Viator</b></li>
           </ul>
           {token === "" ? <div>
             <Button onClick={onOpen} style={{
-               textDecoration: "none", backgroundColor: 'white', color: "#051D40",
+              textDecoration: "none", backgroundColor: 'white', color: "#051D40",
               fontSize: "18px", borderRadius: "25px", marginTop: '15px', marginLeft: '80px', marginRight: '20px', paddingLeft: "25px",
               paddingRight: "25px", paddingTop: '5px', paddingBottom: '0px'
             }}>{token === "" ? "Admin SignIn" : "Welcome Admin"}</Button>
@@ -167,24 +168,26 @@ const Footer = () => {
 
                 <ModalBody pb={6}>
                   <FormControl>
-                    <FormLabel style={{ fontSize: '20px', color: '#051D40', marginTop: '15px',marginLeft:'50px' }}>Email Address</FormLabel>
+                    <FormLabel style={{ fontSize: '20px', color: '#051D40', marginTop: '15px', marginLeft: '50px' }}>Email Address</FormLabel>
                     <Input name="email" type="email" value={email} onChange={handleChange}
                       style={{
                         padding: '5px 55px', borderRadius: '25px', fontSize: '20px',
-                        marginTop: '10px',marginLeft:'50px'
+                        marginTop: '10px', marginLeft: '50px'
                       }}></Input>
                   </FormControl>
                   <FormControl>
-                    <FormLabel style={{ fontSize: '20px', color: '#051D40', marginTop: '15px',marginLeft:'50px' }}>Password</FormLabel>
+                    <FormLabel style={{ fontSize: '20px', color: '#051D40', marginTop: '15px', marginLeft: '50px' }}>Password</FormLabel>
                     <Input style={{
                       padding: '5px 55px', borderRadius: '25px', fontSize: '20px',
-                      marginTop: '10px',marginLeft:'50px'
+                      marginTop: '10px', marginLeft: '50px'
                     }} name="password" type="password" value={password} onChange={handleChange}></Input>
                   </FormControl>
                   <Center>
-                    <Button style={{color:'white',backgroundColor:"#051D40",
-                    padding:'5px 35px',marginTop:'35px',
-                    borderRadius:"25px",fontSize:'18px'}} onClick={handleLogin}>
+                    <Button style={{
+                      color: 'white', backgroundColor: "#051D40",
+                      padding: '5px 35px', marginTop: '35px',
+                      borderRadius: "25px", fontSize: '18px'
+                    }} onClick={handleLogin}>
                       LOGIN
                     </Button>
                   </Center>
@@ -196,7 +199,7 @@ const Footer = () => {
                   <Center>
                     <p style={{
                       textAlign: 'center', fontSize: '12px',
-                      marginTop: '50px',marginRight:'115px'
+                      marginTop: '50px', marginRight: '115px'
                     }}>Welcome to the Admin panel
                       <br></br>
                       This page will redirect you to admin portal</p>
@@ -206,7 +209,7 @@ const Footer = () => {
             </Modal>
           </div> : <div>
             <Button onClick={onOpen} style={{
-               textDecoration: "none", backgroundColor: 'white', color: "#051D40",
+              textDecoration: "none", backgroundColor: 'white', color: "#051D40",
               fontSize: "18px", borderRadius: "25px", marginTop: '15px', marginLeft: '80px', marginRight: '20px', paddingLeft: "25px",
               paddingRight: "25px", paddingTop: '5px', paddingBottom: '5px'
             }}>{token === "" ? "Admin SignIn" : "Welcome Admin"}</Button>
@@ -240,22 +243,24 @@ const Footer = () => {
                   <br></br>
                   <br></br>
 
-                  <Input style={{ fontsize: '25px', padding: '7px 65px', borderRadius: '25px', textAlign: 'left' ,marginLeft:'50px'}} 
-                  placeholder="image source"
+                  <Input style={{ fontsize: '25px', padding: '7px 65px', borderRadius: '25px', textAlign: 'left', marginLeft: '50px' }}
+                    placeholder="image source"
                     onChange={handleChangeproduct} type="text" name="pic" value={product.pic} />
 
-                  
+
                   <br></br><br></br>
 
-                  <Input style={{ fontsize: '25px', padding: '7px 65px', borderRadius: '25px', textAlign: 'left'
-                  ,marginLeft:'50px' }} type="text" placeholder="Title"
+                  <Input style={{
+                    fontsize: '25px', padding: '7px 65px', borderRadius: '25px', textAlign: 'left'
+                    , marginLeft: '50px'
+                  }} type="text" placeholder="Title"
                     onChange={handleChangeproduct} name="title" value={product.title} />
-                 
+
                   <br></br>
                   <br></br>
                   <Button style={{
                     backgroundColor: '#051D40', color: 'white',
-                    padding: '10px 45px', borderRadius: '25px',marginLeft:'100px'
+                    padding: '10px 45px', borderRadius: '25px', marginLeft: '100px'
                   }}
                     colorScheme='teal' mr={3} onClick={function () { handleSubmitproduct(); onClose() }}>
                     Add more places
@@ -266,7 +271,7 @@ const Footer = () => {
             </Modal>
           </div>}
         </div>
-        <div style={{ marginLeft: '50px' }}>
+        <div className='div_right' style={{ marginLeft: '50px' }}>
           <select style={{
             borderRadius: "15px", padding: "5px 20px 5px 5px",
             margin: '50px 15px 55px 15px'
@@ -303,11 +308,11 @@ const Footer = () => {
           </select>
         </div>
 
-        <div style={{ backgroundColor: "white", marginBottom: "15px", marginLeft: "100px", width: "55%" }}>
-          <img width="45px" src="https://tse1.mm.bing.net/th?id=OIP.QTyihsvnfYbJL9dQLrhTsgHaHa&pid=Api&rs=1&c=1&qlt=95&w=121&h=121" alt="image_list"/>
-          <img width="40px" src="https://tse1.mm.bing.net/th?id=OIP.maD3GoTpodAtk505594YOgHaHu&pid=Api&rs=1&c=1&qlt=95&w=112&h=117" alt="image_list"/>
-          <img width="55px" src="https://tse2.mm.bing.net/th?id=OIP.fb0LUcIKaVkBqExMCDUA9gHaFj&pid=Api&P=0" alt="image_list"/>
-          <img width="40px" src="https://tse2.mm.bing.net/th?id=OIP.7EnJXdlI46eYKUYKt9K8ogHaHa&pid=Api&P=0" alt="image_list"/>
+        <div className='div_right' style={{ backgroundColor: "white", marginBottom: "15px", marginLeft: "100px", width: "55%" }}>
+          <img width="45px" src="https://tse1.mm.bing.net/th?id=OIP.QTyihsvnfYbJL9dQLrhTsgHaHa&pid=Api&rs=1&c=1&qlt=95&w=121&h=121" alt="image_list" />
+          <img width="40px" src="https://tse1.mm.bing.net/th?id=OIP.maD3GoTpodAtk505594YOgHaHu&pid=Api&rs=1&c=1&qlt=95&w=112&h=117" alt="image_list" />
+          <img width="55px" src="https://tse2.mm.bing.net/th?id=OIP.fb0LUcIKaVkBqExMCDUA9gHaFj&pid=Api&P=0" alt="image_list" />
+          <img width="40px" src="https://tse2.mm.bing.net/th?id=OIP.7EnJXdlI46eYKUYKt9K8ogHaHa&pid=Api&P=0" alt="image_list" />
         </div>
       </div>
     </div>

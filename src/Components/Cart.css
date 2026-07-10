@@ -1,0 +1,22 @@
+#cart_cards {
+    display: grid;
+    gap: 35px;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+
+@media (max-width:1000px) {
+    #cart_cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:600px) {
+    #cart_cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,160 @@
+#main {
+    width: 80%;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+#main img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Search + Buttons */
+.hero-content {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* z-index: 2; */
+}
+
+#search_div {
+    width: 60%;
+    max-width: 900px;
+}
+
+.overlay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option-btn {
+    border: none;
+    background: white;
+    color: purple;
+    font-size: 18px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option-btn:hover {
+    background: purple;
+    color: white;
+}
+
+.option-btn.active {
+    background: purple;
+    color: white;
+}
+
+.search-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    background: linear-gradient(90deg, #7B1FA2, #E91E63);
+    color: white;
+}
+
+#search_div *,
+#search_div input {
+    box-sizing: border-box;
+}
+
+#main img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+#div_category {
+    display: inline-block;
+    background: linear-gradient(90deg, #7B1FA2, #E91E63);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+}
+
+.option-btn {
+    border: 1px solid #7B1FA2;
+}
+
+/* Tablet */
+@media (max-width:1100px) {
+    #div_category {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    #search_div {
+        width: 80%;
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #main {
+        width: 95%;
+    }
+
+    .hero-content {
+        top: 20%;
+    }
+
+    #search_div {
+        width: 90%;
+    }
+
+    .option-btn,
+    .search-btn {
+        font-size: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #search_div {
+        width: 95%;
+    }
+
+    .hero-content {
+        top: 15%;
+        width: 95%;
+    }
+
+    .overlay {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .option-btn,
+    .search-btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    #main img {
+        height: 450px;
+        object-fit: cover;
+    }
+}

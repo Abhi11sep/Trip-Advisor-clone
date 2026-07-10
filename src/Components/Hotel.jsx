@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import { CartContext } from '../CartCon/CartContextProvider';
 import { HotelContext } from '../Context/HotelContextProvider'
 import { addtobasket } from '../CartCon/action';
-import {  Button } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import Rating from '@material-ui/lab/Rating';
 import Footer from './Footer.jsx'
 import VoyageGuide from "../LOGO/VoyageGuide.png";
+import './Hotel.css'
 
 
 const Hotel = () => {
@@ -24,13 +25,7 @@ const Hotel = () => {
         paddingBottom: "25px", paddingTop: '65px'
       }}>Explore the city</h1>
 
-      <div style={{
-        display: 'grid', gap: '35px', gridTemplateRows: 'auto',
-        gridTemplateColumns: 'repeat(3,1fr)',
-        padding: '0px', width: '90%', marginLeft: "auto", marginRight: 'auto',
-        marginTop: '50px', marginBottom: '50px'
-
-      }}>
+      <div id='hotel_cards'>
         {state[0].map((item) => (
           <div key={item.location_id}>
             <div style={{
@@ -38,7 +33,7 @@ const Hotel = () => {
               padding: '0px', borderRadius: '25px', lineHeight: '20px',
               backgroundColor: 'white'
             }}>
-             
+
               <img
                 style={{
                   boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",

@@ -1,0 +1,292 @@
+/* Navbar */
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 6%;
+
+    background: #051D40;
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    display: block;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Sign In */
+
+.signin-btn {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    /* Space between icon and text */
+
+    background: #051D40 !important;
+    color: #f5f5f5 !important;
+    border-radius: 40px !important;
+
+    padding: 10px 28px !important;
+    border: 1px solid #f5f5f5;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+
+    transition: .3s !important;
+}
+
+.signin-btn:hover {
+    transform: translateY(-2px);
+    background: #f5f5f5 !important;
+    color: #051D40 !important;
+}
+
+/* Basket */
+
+.basket-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #f5f5f5;
+    text-decoration: none;
+    border: 1px solid #f5f5f5;
+
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    transition: .3s;
+}
+
+.basket-link:hover {
+    background: #f5f5f5;
+    color: #051D40;
+}
+
+
+
+/*---------------MODEL----------*/
+.login-modal {
+
+    width: 450px !important;
+
+    margin: auto;
+
+    margin-top: 100px !important;
+
+    padding: 35px 30px !important;
+
+    border-radius: 24px !important;
+
+    background: white !important;
+    z-index: 50 !important;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
+
+}
+
+.close-btn {
+    position: absolute !important;
+    top: 18px !important;
+    right: 18px !important;
+
+    width: 40px !important;
+    height: 40px !important;
+
+    border-radius: 50% !important;
+    background: #f5f5f5 !important;
+    color: #333 !important;
+
+    transition: all .25s ease;
+}
+
+.close-btn:hover {
+    background: #7B1FA2 !important;
+    color: white !important;
+    transform: rotate(90deg);
+}
+
+.modal-logo {
+
+    width: 95px;
+
+    margin: auto;
+
+    display: block;
+
+}
+
+.modal-title {
+
+    text-align: center;
+
+    font-size: 30px !important;
+
+    padding-top: 20px !important;
+
+    padding-bottom: 8px !important;
+
+}
+
+.modal-subtitle {
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+.social-btn {
+
+    width: 100% !important;
+
+    height: 58px !important;
+
+    border-radius: 16px !important;
+
+    background: white !important;
+
+    color: #222 !important;
+
+    border: 1px solid #ddd !important;
+
+    margin-bottom: 15px !important;
+
+    display: flex !important;
+
+    justify-content: flex-start !important;
+
+    align-items: center;
+
+    gap: 18px;
+
+    font-size: 16px !important;
+
+    font-weight: 600 !important;
+
+    transition: .25s !important;
+
+}
+
+.social-btn:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #7B1FA2 !important;
+
+    box-shadow: 0 10px 25px rgba(123, 31, 162, .15);
+
+}
+
+.social-btn img {
+
+    width: 28px;
+
+}
+
+.modal-footer {
+
+    text-align: center;
+
+    font-size: 12px !important;
+
+    color: #666;
+
+    line-height: 1.6;
+
+    padding-top: 10px !important;
+
+}
+
+/* Tablet */
+
+@media(max-width:768px) {
+
+    #navbar {
+        padding: 0 20px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .signin-btn span {
+        display: none;
+    }
+
+    .basket-link span {
+        display: none;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:600px) {
+
+    #navbar {
+        justify-content: space-between
+    }
+
+    .signin-btn {
+        border: none;
+    }
+
+    .basket-link {
+        border: none;
+    }
+
+    .logo {
+        width: 110px;
+    }
+
+    .login-modal {
+
+        width: 92% !important;
+
+        padding: 25px 20px !important;
+
+        margin-top: 100px !important;
+
+    }
+
+    .modal-title {
+
+        font-size: 24px !important;
+
+    }
+
+    .social-btn {
+
+        height: 52px !important;
+
+        font-size: 15px !important;
+
+    }
+}

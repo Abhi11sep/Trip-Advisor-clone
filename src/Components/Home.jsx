@@ -11,17 +11,17 @@ import TopMissed from './TopMissed.jsx'
 
 const Home = () => {
   return (
-    <div style={{paddingTop:'65px'}}>
-    <Options/>
-      <SearchSpace/>
-      <Experience/>
-      <GetoutThere/>
-      <Sceneic/>
-      <MoreExplore/>
-      <TopMissed/>
-      <TopDestination/>
-      <Footer/>
-      
+    <div style={{ paddingTop: '65px' }}>
+      <Options />
+      <SearchSpace />
+      <Experience />
+      <GetoutThere />
+      <Sceneic />
+      <MoreExplore />
+      <TopMissed />
+      <TopDestination />
+      <Footer />
+
     </div>
   )
 }

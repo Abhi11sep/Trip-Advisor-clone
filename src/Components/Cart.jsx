@@ -7,6 +7,7 @@ import { Button } from '@chakra-ui/react';
 import Rating from '@material-ui/lab/Rating';
 import Footer from './Footer'
 import VoyageGuide from "../LOGO/VoyageGuide.png";
+import './Cart.css'
 
 const Cart = () => {
 
@@ -20,13 +21,7 @@ const Cart = () => {
         paddingBottom: "25px", paddingTop: '65px'
       }}>Your basket</h1>
 
-      <div style={{
-        display: 'grid', gap: '35px', gridTemplateRows: 'auto',
-        gridTemplateColumns: 'repeat(3,1fr)',
-        padding: '0px', width: '90%', marginLeft: "auto", marginRight: 'auto',
-        marginTop: '50px', marginBottom: '50px'
-
-      }}>
+      <div id='cart_cards'>
         {state.map((item) => (
           <div>
             <div style={{

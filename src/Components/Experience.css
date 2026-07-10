@@ -1,0 +1,12 @@
+#heading {
+    font-size: 27px;
+    font-weight: 600;
+
+}
+
+@media (max-width: 800px) {
+    .carousel-wrapper {
+        width: 200%;
+        /* border: 2px solid red; */
+    }
+}
